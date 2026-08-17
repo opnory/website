@@ -55,11 +55,11 @@ export function Footer() {
           <p className="footer-copyright">&copy; {currentYear} Opnory</p>
 
           <nav className="footer-legal" aria-label="Legal links">
-            <a href="#privacy" className="footer-link">
-              Privacy <span className="coming-soon">Coming soon</span>
+            <a href="https://github.com/opnory/support/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer" className="footer-link">
+              Privacy
             </a>
-            <a href="#terms" className="footer-link">
-              Terms <span className="coming-soon">Coming soon</span>
+            <a href="https://github.com/opnory/support/blob/main/EULA.md" target="_blank" rel="noopener noreferrer" className="footer-link">
+              EULA
             </a>
           </nav>
         </div>
