@@ -55,7 +55,7 @@ export function Security() {
         <header className="section-header">
           <span className="section-badge">Security & Governance</span>
           <h2 id="security-title" className="section-title">AI assists. Your policies decide.</h2>
-          <p className="section-description">Opnory is designed so the AI never becomes the authorization system. Every action flows through your identity and policy infrastructure.</p>
+          <p className="section-description">Opnory is designed so the AI never becomes the authorization system. Opnory is designed so privileged actions flow through your identity and policy infrastructure.</p>
         </header>
 
         <div className="security-content">

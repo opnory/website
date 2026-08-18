@@ -2,6 +2,7 @@ export function Examples() {
   const examples = [
     {
       category: 'IT Support',
+      status: 'Planned',
       icon: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
           <circle cx="12" cy="12" r="10"></circle>
@@ -15,6 +16,7 @@ export function Examples() {
     },
     {
       category: 'Knowledge',
+      status: 'Planned',
       icon: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
           <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
@@ -28,6 +30,7 @@ export function Examples() {
     },
     {
       category: 'Access',
+      status: 'Planned',
       icon: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -46,8 +49,8 @@ export function Examples() {
       <div className="container">
         <header className="section-header">
           <span className="section-badge">Example Interactions</span>
-          <h2 id="examples-title" className="section-title">Real conversations, real outcomes</h2>
-          <p className="section-description">Illustrative examples of how employees interact with Opnory for common scenarios.</p>
+          <h2 id="examples-title" className="section-title">Example conversations. Intended outcomes.</h2>
+          <p className="section-description">Illustrative examples of how Opnory is designed to work for common scenarios.</p>
         </header>
 
         <div className="examples-grid">
@@ -57,7 +60,10 @@ export function Examples() {
                 <div className="example-icon">
                   {example.icon}
                 </div>
-                <h3 className="example-category">{example.category}</h3>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)' }}>
+                  <h3 className="example-category">{example.category}</h3>
+                  <span className="example-status">{example.status}</span>
+                </div>
               </div>
 
               <div className="example-conversation">

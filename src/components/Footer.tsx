@@ -12,7 +12,7 @@ export function Footer() {
           <div className="footer-brand">
             <p className="footer-wordmark">Opnory</p>
             <p className="footer-description">
-              AI Service Desk for modern teams. Company-aware IT support, governed access requests, and self-service automation.
+              Open-source AI service desk for modern teams. Company-aware IT support, self-service troubleshooting, and governed access workflows.
             </p>
           </div>
 
@@ -23,7 +23,7 @@ export function Footer() {
               <li><a href="#how-it-works" className="footer-link">How it works</a></li>
               <li><a href="#security" className="footer-link">Security</a></li>
               <li><a href="#integrations" className="footer-link">Integrations</a></li>
-              <li><a href="#deployment" className="footer-link">Deployment</a></li>
+              <li><a href="#deployment" className="footer-link">Two Editions</a></li>
             </ul>
           </nav>
 
@@ -52,14 +52,17 @@ export function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p className="footer-copyright">&copy; {currentYear} Opnory</p>
+          <p className="footer-copyright">&copy; {currentYear} Raell Dottin. Opnory.</p>
 
           <nav className="footer-legal" aria-label="Legal links">
             <a href="https://github.com/opnory/support/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="footer-link">
               Open Source License
             </a>
             <a href="https://github.com/opnory/support/blob/main/CLOUD_TERMS.md" target="_blank" rel="noopener noreferrer" className="footer-link">
-              Cloud Terms
+              Cloud Terms (Draft)
+            </a>
+            <a href="https://github.com/opnory/support/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" className="footer-link">
+              Security
             </a>
             <a href="https://github.com/opnory/support/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer" className="footer-link">
               Privacy

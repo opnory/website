@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export function Hero({ onCtaClick }: { onCtaClick?: (section: string) => void }) {
+export function Hero() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export function Hero({ onCtaClick }: { onCtaClick?: (section: string) => void })
             transform: visible ? 'translateY(0)' : 'translateY(10px)',
             transition: 'opacity 0.6s var(--transition-slow) 0.1s, transform 0.6s var(--transition-slow) 0.1s',
           }}>
-            AI Service Desk for Modern Teams
+            Open-Source AI Service Desk
           </span>
 
           <h1 id="hero-title" className="hero-title" style={{
@@ -36,20 +36,46 @@ export function Hero({ onCtaClick }: { onCtaClick?: (section: string) => void })
             transform: visible ? 'translateY(0)' : 'translateY(10px)',
             transition: 'opacity 0.6s var(--transition-slow) 0.3s, transform 0.6s var(--transition-slow) 0.3s',
           }}>
-            Opnory gives employees instant, company-aware IT support, guides self-service troubleshooting, and turns access requests into governed workflows.
+            Opnory is being built to give employees instant, company-aware IT support, guide self-service troubleshooting,
+            and turn access requests into governed workflows — all within the tools your team already uses.
           </p>
+
+          <div className="hero-badges" style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 'var(--space-sm)',
+            marginBottom: 'var(--space-lg)',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(10px)',
+            transition: 'opacity 0.6s var(--transition-slow) 0.35s, transform 0.6s var(--transition-slow) 0.35s',
+          }}>
+            <span className="hero-badge hero-badge-opensource">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <path d="M9 18l6-6-6-6"></path>
+              </svg>
+              Opnory Open Source (BSD-2-Clause)
+            </span>
+            <span className="hero-badge hero-badge-cloud">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              Opnory Cloud (Early Access)
+            </span>
+          </div>
 
           <div className="hero-ctas" style={{
             opacity: visible ? 1 : 0,
             transform: visible ? 'translateY(0)' : 'translateY(10px)',
             transition: 'opacity 0.6s var(--transition-slow) 0.4s, transform 0.6s var(--transition-slow) 0.4s',
           }}>
-            <button
+            <a
+              href="mailto:hello@opnory.com?subject=Opnory%20Early%20Access"
               className="btn btn-primary hero-cta"
-              onClick={() => onCtaClick?.('early-access')}
             >
               Get Early Access
-            </button>
+            </a>
             <a
               href="https://github.com/opnory"
               target="_blank"

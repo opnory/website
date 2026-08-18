@@ -1,24 +1,49 @@
+interface IntegrationItem {
+  name: string;
+  status: string;
+  note?: string;
+}
+
+interface IntegrationCategory {
+  title: string;
+  items: IntegrationItem[];
+}
+
 export function Integrations() {
-  const categories = [
+  const categories: IntegrationCategory[] = [
     {
       title: 'Communication',
-      items: ['Slack'],
+      items: [
+        { name: 'Slack', status: 'Planned', note: 'Primary workplace interface' },
+      ],
     },
     {
       title: 'Identity',
-      items: ['Microsoft Entra ID', 'Okta'],
+      items: [
+        { name: 'Microsoft Entra ID', status: 'Planned' },
+        { name: 'Okta', status: 'Planned' },
+      ],
     },
     {
       title: 'Service Management',
-      items: ['Jira Service Management', 'ServiceNow'],
+      items: [
+        { name: 'Jira Service Management', status: 'Planned' },
+        { name: 'ServiceNow', status: 'Planned' },
+      ],
     },
     {
       title: 'Developer',
-      items: ['GitHub'],
+      items: [
+        { name: 'GitHub', status: 'Planned' },
+      ],
     },
     {
       title: 'Cloud & SaaS',
-      items: ['AWS', 'Google Workspace', 'Other approved internal systems'],
+      items: [
+        { name: 'AWS', status: 'Planned' },
+        { name: 'Google Workspace', status: 'Planned' },
+        { name: 'Other approved internal systems', status: 'Planned' },
+      ],
     },
   ]
 
@@ -27,8 +52,8 @@ export function Integrations() {
       <div className="container">
         <header className="section-header">
           <span className="section-badge">Integrations</span>
-          <h2 id="integrations-title" className="section-title">Designed for the systems your IT team already operates</h2>
-          <p className="section-description">Opnory integrates with your existing stack — not a separate platform to manage.</p>
+          <h2 id="integrations-title" className="section-title">Designed to connect with the systems your IT team already operates</h2>
+          <p className="section-description">Opnory is being built to integrate with your existing stack — not a separate platform to manage.</p>
         </header>
 
         <div className="integrations-grid">
@@ -37,11 +62,10 @@ export function Integrations() {
               <h3 className="integration-category-title">{category.title}</h3>
               <ul className="integration-items">
                 {category.items.map((item) => (
-                  <li key={item} className="integration-item">
-                    <svg className="integration-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    {item}
+                  <li key={item.name} className="integration-item">
+                    <span className="integration-name">{item.name}</span>
+                    {item.note && <span className="integration-note">{item.note}</span>}
+                    <span className={`integration-status integration-status-${item.status.toLowerCase()}`}>{item.status}</span>
                   </li>
                 ))}
               </ul>
@@ -49,7 +73,7 @@ export function Integrations() {
           ))}
         </div>
 
-        <p className="integrations-note">Integration availability will vary during early access.</p>
+        <p className="integrations-note">All integrations listed are planned or in early development. Availability and scope will vary during early access.</p>
       </div>
     </section>
   )

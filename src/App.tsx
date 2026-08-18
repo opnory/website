@@ -32,14 +32,14 @@ function App() {
     <>
       <Header onNavigate={handleNavigate} />
       <main id="main-content" style={{ position: 'relative', zIndex: 1 }}>
-        <Hero onCtaClick={handleNavigate} />
+        <Hero />
         <Product />
         <HowItWorks />
         <Examples />
         <Security />
         <Integrations />
         <Deployment />
-        <EarlyAccess onCtaClick={handleNavigate} />
+        <EarlyAccess />
       </main>
       <Footer />
     </>
