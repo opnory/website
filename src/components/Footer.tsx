@@ -55,8 +55,11 @@ export function Footer() {
           <p className="footer-copyright">&copy; {currentYear} Raell Dottin. Opnory.</p>
 
           <nav className="footer-legal" aria-label="Legal links">
-            <a href="https://github.com/opnory/support/blob/main/EULA.md" target="_blank" rel="noopener noreferrer" className="footer-link">
-              EULA
+            <a href="https://github.com/opnory/opnory/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="footer-link">
+              Open Source License
+            </a>
+            <a href="https://github.com/opnory/support/blob/main/LEGAL.md" target="_blank" rel="noopener noreferrer" className="footer-link">
+              Legal
             </a>
             <a href="https://github.com/opnory/support/blob/main/CLOUD_TERMS.md" target="_blank" rel="noopener noreferrer" className="footer-link">
               Cloud Terms (Draft)
