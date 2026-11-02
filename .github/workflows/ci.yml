@@ -1,0 +1,40 @@
+# CI for the static site: typecheck + production build on every PR and on push
+# to main. Required status check for main. Deployment is Cloudflare Pages'
+# own Git integration, not this workflow (see AGENTS.md).
+
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1  # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies (lockfile)
+        run: npm ci --no-audit --no-fund
+
+      - name: Typecheck and build
+        run: npm run build
+
+      - name: Verify static output
+        run: test -f dist/index.html
+
+      - name: Whitespace check
+        run: git diff --check
